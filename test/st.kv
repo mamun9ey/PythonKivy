@@ -1,0 +1,372 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+<ContentNavigationDrawer>
+
+    ScrollView:
+        MDList:
+            OneLineListItem:
+                text: "Login"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "login"
+            OneLineListItem:
+                text: "Registration"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "reg"
+            OneLineListItem:
+                text: "Courses"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "course"
+            OneLineListItem:
+                text: "Results"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "result"
+            OneLineListItem:
+                text: "Academic"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "academic"
+            OneLineListItem:
+                text: "Attendence"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "aten"
+
+
+MDScreen:
+    
+    md_bg_color: get_color_from_hex("#7ea685")
+    MDToolbar:
+        id: toolbar
+        pos_hint: {"top": 1}
+        elevation: 10
+        title: "Menu"
+        md_bg_color: get_color_from_hex("#477852")
+        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+
+    MDNavigationLayout:
+        x: toolbar.height
+        ScreenManager:
+            id: screen_manager
+            MDScreen:
+                name: "login"
+                MDLabel:
+                    text: "STUDENT MANAGEMENT SYSTEM"
+                    halign: "center"
+                    pos_hint: {"center_y": .80}
+                    font_size: 30
+                    font_style:"H3"
+                MDTextField : 
+                    hint_text : "USER NAME"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .55}
+                MDTextField : 
+                    hint_text : "PASSWORD"
+                    password:True
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .45}
+                MDFlatButton:
+                    text: "LOGIN"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#24755d") 
+                    line_color: get_color_from_hex("#186b5d")
+                    font_size: "60sp"
+                    font_style: "Button"
+                    pos_hint: {"center_x": .50,"center_y": .20}
+            
+            MDScreen:
+                name: "reg"
+                MDLabel:
+                    text: "REGISTRATION FORM"
+                    halign: "center"
+                    pos_hint: {"center_y": .85}
+                    font_size: 30
+                    font_style:"H3"
+                MDTextField : 
+                    hint_text : "STUDENT NAME"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .77}
+                MDTextField : 
+                    hint_text : "STUDENT ID"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .69}
+                MDTextField : 
+                    hint_text : "DEPARTMENT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .61}
+                MDTextField : 
+                    hint_text : "HALL NAME"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .53}
+                MDTextField : 
+                    hint_text : "YEAR-SEMISTER"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .45}
+                MDTextField : 
+                    hint_text : "SESSION"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .37}
+                MDTextField : 
+                    hint_text : "BLOOD GROUP"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .29}
+                MDFlatButton:
+                    text: "REGISTRATION"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#24755d") 
+                    line_color: get_color_from_hex("#186b5d")
+                    font_size: "60sp"
+                    font_style: "Button"
+                    pos_hint: {"center_x": .50,"center_y": .20}
+           
+            
+            MDScreen:
+                name: "course"
+                MDLabel:
+                    text: "COURSE DETAILS"
+                    halign: "center"
+                    pos_hint: {"center_y": .80}
+                    font_size: 30
+                    font_style:"H3"
+                MDTextField : 
+                    hint_text : "DEPARTMENT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .60}
+                MDTextField : 
+                    hint_text : "YEAR-SEMISTER"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .50}
+                MDTextField : 
+                    hint_text : "STUDENT ID"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .40}
+                MDTextField : 
+                    hint_text : "SESSION"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .30}
+                MDFlatButton:
+                    text: "SUBMIT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#24755d") 
+                    line_color: get_color_from_hex("#186b5d")
+                    font_size: "60sp"
+                    font_style: "Button"
+                    pos_hint: {"center_x": .50,"center_y": .20}                   
+                    
+                    
+                    
+            MDScreen:
+                name: "result"                   
+                MDLabel:
+                    text: "SHOW RESULT"
+                    halign: "center"
+                    pos_hint: {"center_y": .80}
+                    font_size: 30
+                    font_style:"H3"
+                MDTextField : 
+                    hint_text : "STUDENT ID"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .60}
+                MDTextField : 
+                    hint_text : "DEPARTMENT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .50}
+                MDTextField : 
+                    hint_text : "YEAR-SEMISTER"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .40}
+                MDTextField : 
+                    hint_text : "SESSION"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .30}
+                MDFlatButton:
+                    text: "SUBMIT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#24755d") 
+                    line_color: get_color_from_hex("#186b5d")
+                    font_size: "60sp"
+                    font_style: "Button"
+                    pos_hint: {"center_x": .50,"center_y": .20}
+                    
+                    
+                    
+            MDScreen:
+                name: "academic"                   
+                MDLabel:
+                    text: "ACADEMIC RECORDS"
+                    halign: "center"
+                    pos_hint: {"center_y": .80}
+                    font_size: 30
+                    font_style:"H3"
+                MDTextField : 
+                    hint_text : "DEPARTMENT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .50}
+                MDTextField : 
+                    hint_text : "YEAR-SEMISTER"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .40}
+                MDTextField : 
+                    hint_text : "SESSION"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .30}
+                MDFlatButton:
+                    text: "SUBMIT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#24755d") 
+                    line_color: get_color_from_hex("#186b5d")
+                    font_size: "60sp"
+                    font_style: "Button"
+                    pos_hint: {"center_x": .50,"center_y": .20}
+            MDScreen:
+                name: "aten"                   
+                MDLabel:
+                    text: "ATTENDENCE RECORDS"
+                    halign: "center"
+                    pos_hint: {"center_y": .80}
+                    font_size: 30
+                    font_style:"H3"
+                MDTextField : 
+                    hint_text : "STUDENT ID"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .50}
+                MDTextField : 
+                    hint_text : "DEPARTMENT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .40}
+                MDTextField : 
+                    hint_text : "YEAR-SEMISTER"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#ffffff")
+                    mode: "rectangle"
+                    multiline: False
+                    size_hint_x : None
+                    width : 260
+                    pos_hint : {"center_x":.5,"center_y": .30}
+                MDFlatButton:
+                    text: "SUBMIT"
+                    theme_text_color: "Custom"
+                    text_color: get_color_from_hex("#24755d") 
+                    line_color: get_color_from_hex("#186b5d")
+                    font_size: "60sp"
+                    font_style: "Button"
+                    pos_hint: {"center_x": .50,"center_y": .20}
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer

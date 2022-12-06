@@ -1,0 +1,57 @@
+# create the screen
+
+MDScreen :
+    md_bg_color : [82/255, 122/255, 80/255,1]
+    MDCard :
+        size_hint : None,None
+        size : 350,500
+        pos_hint : {"center_x":.5,"center_y":.5}
+        elevation : 10
+        spacing : 30
+        md_bg_color :  [255, 255, 255,1]
+        orientation : "vertical"
+        padding_y : 5
+        #Adding items to the card
+        MDBoxLayout:
+            size_hint_y: None
+            height: "350dp"
+            orientation: 'vertical'
+        
+            FitImage:
+                size_hint_y: 1
+                source: 'image/log.jpg'
+        
+        MDLabel : 
+            text : 'STUDENT LOGIN'
+            font_name : "OpenSans"
+            font_style : 'Button'
+            font_size : 35
+            halign : "center"
+            size_hint_y : None
+            height : self.texture_size[1]
+            padding_y : 5
+            
+        MDTextField : 
+            font_name : "OpenSans"
+            hint_text : "User Name"
+            size_hint_x : None
+            width : 260
+            font_size : 20
+            pos_hint : {"center_x":.5}
+        MDTextField :
+            hint_text : "Password"
+            size_hint_x : None
+            width : 260
+            font_size : 20
+            pos_hint : {"center_x":.5}
+        Button : 
+            text : 'LOGIN'
+            bold : True
+            pos_hint : {"center_x":.5}
+            font_size : 15
+            size: 260,50
+            size_hint: None,None
+            pos : "288dp","180dp"
+            md_bg_color : [84/255, 204/255, 75/255,1]
+        
+            
